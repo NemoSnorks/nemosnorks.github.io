@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>博观约取厚积薄发</title>
+  <title>Add a Jar to Maven | 博观约取厚积薄发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博观约取厚积薄发">
-<meta property="og:url" content="http://www.ieeer.com/index.html">
+  <meta name="description" content="Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have alre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Add a Jar to Maven">
+<meta property="og:url" content="http://www.ieeer.com/2017/01/12/Add-a-Jar-to-Maven/index.html">
 <meta property="og:site_name" content="博观约取厚积薄发">
+<meta property="og:description" content="Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have alre">
+<meta property="og:updated_time" content="2017-01-12T07:44:55.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博观约取厚积薄发">
+<meta name="twitter:title" content="Add a Jar to Maven">
+<meta name="twitter:description" content="Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have alre">
   
     <link rel="alternate" href="/atom.xml" title="博观约取厚积薄发" type="application/atom+xml">
   
@@ -63,57 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Some-Solutions-to-Maven-J2EE-Project" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/" class="article-date">
-  <time datetime="2017-01-12T07:32:15.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/J2EE/">J2EE</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/">Some Solutions to Maven J2EE Project</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文总结了Maven J2EE 项目中常见的一些错误，避免再次进坑。</p>
-<h2 id="Tomcat-启动包冲突"><a href="#Tomcat-启动包冲突" class="headerlink" title="Tomcat 启动包冲突"></a>Tomcat 启动包冲突</h2><p>Tomcat 启动出现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.io.IOException: java.lang.ClassCastException: Cannot cast org.springframework.web.SpringServlet</div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.ieeer.com/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/" data-id="cixu2togd0001gcffo4b1yilk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eclipse/">Eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tomcat/">Tomcat</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Add-a-Jar-to-Maven" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Add-a-Jar-to-Maven" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/12/Add-a-Jar-to-Maven/" class="article-date">
   <time datetime="2017-01-12T07:10:16.000Z" itemprop="datePublished">2017-01-12</time>
@@ -130,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/Add-a-Jar-to-Maven/">Add a Jar to Maven</a>
+    <h1 class="article-title" itemprop="name">
+      Add a Jar to Maven
     </h1>
   
 
@@ -140,11 +94,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have already installed Maven.</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/12/Add-a-Jar-to-Maven/#more">Read More</a>
-          </p>
-        
+<a id="more"></a> 
+<h2 id="Download-the-JDBC-driver-for-Microsoft-SQL-Server"><a href="#Download-the-JDBC-driver-for-Microsoft-SQL-Server" class="headerlink" title="Download the JDBC driver for Microsoft SQL Server"></a>Download the JDBC driver for Microsoft SQL Server</h2><p>1, Visit the MSDN site for SQL Server and download the latest version of the JDBC driver for your operating system.<br>2, Unzip the package<br>3, Open a command prompt and switch into the expanded directory where the jar file is located.<br>4, Execute the following command. Be sure to modify the jar file name and version as necessary:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=sqljdbc4.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0</div></pre></td></tr></table></figure>
+<p>5, You should see something similar to this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[INFO] Scanning forprojects...</div><div class="line">[INFO]</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Building Maven Stub Project (No POM) 1</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO]</div><div class="line">[INFO] --- maven-install-plugin:2.3.1:install-file(default-cli)</div><div class="line"> @ standalone-pom ---</div><div class="line">[INFO] Installing /Users/claude/installers/JDBC/sqljdbc_4.0/enu/sqljdbc4.jar</div><div class="line"> to/Users/claude/.m2/repository/com/microsoft/sqlserver/sqljdbc4/4.0/sqljdbc4-4.0.jar</div><div class="line">[INFO] Installing/var/folders/c6/q1bdtq557kv54783p1g6cbsw0000gp/T/mvninstall1874482299687761721.pom</div><div class="line"> to /Users/claude/.m2/repository/com/microsoft/sqlserver/sqljdbc4/4.0/sqljdbc4-4.0.pom</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: 1.208s</div><div class="line">[INFO] Finished at: Tue Mar 13 14:07:31 EDT 2012</div><div class="line">[INFO] Final Memory: 3M/81M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></td></tr></table></figure>
+<h2 id="Modify-your-POM"><a href="#Modify-your-POM" class="headerlink" title="Modify your POM"></a>Modify your POM</h2><p>Include the new dependency by modifying your project’s pom.xml. Add the following dependency:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;com.microsoft.sqlserver&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;sqljdbc4&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;4.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<p>Save the pom.xml file and build the project to make sure no errors exist.</p>
+<p>本文来自: <a href="http://claude.betancourt.us/add-microsoft-sql-jdbc-driver-to-maven/" target="_blank" rel="external">原文链接</a></p>
+
       
     </div>
     <footer class="article-footer">
@@ -156,98 +115,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-an-easy-method-for-deleting-svn-in-windows" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/09/an-easy-method-for-deleting-svn-in-windows/" class="article-date">
-  <time datetime="2017-01-09T07:50:00.000Z" itemprop="datePublished">2017-01-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tool/">Tool</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Some Solutions to Maven J2EE Project
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/09/an-easy-method-for-deleting-svn-in-windows/">An Easy Method For Deleting .svn in Windows</a>
-    </h1>
   
+    <a href="/2017/01/09/an-easy-method-for-deleting-svn-in-windows/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">An Easy Method For Deleting .svn in Windows</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天看了 <a href="http://weblogs.asp.net/jgalloway/archive/2007/02/24/shell-command-remove-svn-folders.aspx">Jon Galloway</a>的一个注册表脚本，十分方便，分享如下：</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/09/an-easy-method-for-deleting-svn-in-windows/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.ieeer.com/2017/01/09/an-easy-method-for-deleting-svn-in-windows/" data-id="cixu2togk0004gcff6qpefupp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVN/">SVN</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/08/hello-world/" class="article-date">
-  <time datetime="2017-01-08T11:15:16.295Z" itemprop="datePublished">2017-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/08/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.ieeer.com/2017/01/08/hello-world/" data-id="cixu2togn0005gcffl3wsdz2d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
