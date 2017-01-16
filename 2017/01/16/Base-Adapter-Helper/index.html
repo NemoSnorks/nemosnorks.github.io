@@ -58,19 +58,19 @@
 
 
 
-<meta name="description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern. github
-1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override             protected">
+<meta name="description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern.See github for details.
+1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base Adapter Helper">
 <meta property="og:url" content="http://www.ieeer.com/2017/01/16/Base-Adapter-Helper/index.html">
 <meta property="og:site_name" content="满屏荒唐言">
-<meta property="og:description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern. github
-1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override             protected">
-<meta property="og:updated_time" content="2017-01-16T03:44:52.826Z">
+<meta property="og:description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern.See github for details.
+1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override">
+<meta property="og:updated_time" content="2017-01-16T03:51:44.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Base Adapter Helper">
-<meta name="twitter:description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern. github
-1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override             protected">
+<meta name="twitter:description" content="Abstraction for the usual BaseAdapter “ViewHolder” pattern.See github for details.
+1234567891011121314adapter = new QuickAdapter&amp;lt;Status&amp;gt;(this, R.layout.tweet) &amp;#123;             @Override">
 
 
 
@@ -335,7 +335,7 @@
       
 
       
-        <p>Abstraction for the usual BaseAdapter “ViewHolder” pattern. <a href="https://github.com/JoanZapata/base-adapter-helper" target="_blank" rel="external">github</a></p>
+        <p>Abstraction for the usual BaseAdapter “ViewHolder” pattern.<br>See <a href="https://github.com/JoanZapata/base-adapter-helper" target="_blank" rel="external">github</a> for details.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">adapter = new QuickAdapter&lt;Status&gt;(this, R.layout.tweet) &#123;</div><div class="line">             @Override</div><div class="line">             protected void convert(BaseAdapterHelper helper, Status status) &#123;</div><div class="line">                 boolean isRetweet = status.isRetweet();</div><div class="line">                 <span class="keyword">if</span> (isRetweet) status = status.getRetweetedStatus();</div><div class="line"></div><div class="line">                 helper.setText(tweetText, status.getText())</div><div class="line">                         .setVisible(tweetRT, isRetweet)</div><div class="line">                         .setText(tweetName, status.getUser().getName())</div><div class="line">                         .setText(tweetDate, dateFormat.format(status.getCreatedAt()))</div><div class="line">                         .setImageUrl(tweetAvatar, status.getUser().getProfileImageURL())</div><div class="line">                         .linkify(tweetText);</div><div class="line">             &#125;</div><div class="line">         &#125;;</div></pre></td></tr></table></figure>
 
       
