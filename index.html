@@ -222,6 +222,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/16/Base-Adapter-Helper/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="NemoSnorks">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="满屏荒唐言">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="满屏荒唐言" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/16/Base-Adapter-Helper/" itemprop="url">
+                  Base Adapter Helper
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-16T11:38:24+08:00">
+                2017-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dev/" itemprop="url" rel="index">
+                    <span itemprop="name">Dev</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dev/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Abstraction for the usual BaseAdapter “ViewHolder” pattern. <a href="https://github.com/JoanZapata/base-adapter-helper" target="_blank" rel="external">github</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">adapter = new QuickAdapter&lt;Status&gt;(this, R.layout.tweet) &#123;</div><div class="line">             @Override</div><div class="line">             protected void convert(BaseAdapterHelper helper, Status status) &#123;</div><div class="line">                 boolean isRetweet = status.isRetweet();</div><div class="line">                 <span class="keyword">if</span> (isRetweet) status = status.getRetweetedStatus();</div><div class="line"></div><div class="line">                 helper.setText(tweetText, status.getText())</div><div class="line">                         .setVisible(tweetRT, isRetweet)</div><div class="line">                         .setText(tweetName, status.getUser().getName())</div><div class="line">                         .setText(tweetDate, dateFormat.format(status.getCreatedAt()))</div><div class="line">                         .setImageUrl(tweetAvatar, status.getUser().getProfileImageURL())</div><div class="line">                         .linkify(tweetText);</div><div class="line">             &#125;</div><div class="line">         &#125;;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/12/Solutions-to-Maven-J2EE-Project/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -328,9 +481,9 @@
 <h3 id="Tomcat-启动包冲突"><a href="#Tomcat-启动包冲突" class="headerlink" title="Tomcat 启动包冲突"></a>Tomcat 启动包冲突</h3><p>Tomcat 启动出现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.io.IOException: java.lang.ClassCastException: Cannot cast org.springframework.web.SpringServlet</div></pre></td></tr></table></figure></p>
 <p>原因<br>tomcat 启动后先将tomcat/lib目录下的jar包全部读入内存，如果webapps目录里的应用程序中WEB-INF/lib目录下有相同的包，将无法加载，不同版本的包之间也会造成类似问题。</p>
 <p>解决办法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">&lt;groupId&gt;javax&lt;/groupId&gt;</div><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</div><div class="line">&lt;version&gt;7.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">	&lt;groupId&gt;javax&lt;/groupId&gt;</div><div class="line">	&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">	&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</div><div class="line">	&lt;version&gt;7.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
 <h3 id="Maven-update-project-报错"><a href="#Maven-update-project-报错" class="headerlink" title="Maven-update project 报错"></a>Maven-update project 报错</h3><p>Maven项目，右键Maven-update project后报错如下的解决办法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">&lt;plugins&gt;</div><div class="line">&lt;plugin&gt;</div><div class="line">&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div><div class="line">&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line">&lt;<span class="built_in">source</span>&gt;1.7&lt;/<span class="built_in">source</span>&gt;</div><div class="line">&lt;target&gt;1.7&lt;/target&gt;</div><div class="line">&lt;/configuration&gt;</div><div class="line">&lt;/plugin&gt;</div><div class="line">&lt;/plugins&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">	&lt;plugins&gt;</div><div class="line">		&lt;plugin&gt;</div><div class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div><div class="line">			&lt;configuration&gt;</div><div class="line">				&lt;<span class="built_in">source</span>&gt;1.7&lt;/<span class="built_in">source</span>&gt;</div><div class="line">				&lt;target&gt;1.7&lt;/target&gt;</div><div class="line">			&lt;/configuration&gt;</div><div class="line">		&lt;/plugin&gt;</div><div class="line">	&lt;/plugins&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure>
 <h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3>
           
         
@@ -695,7 +848,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -704,7 +857,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -713,7 +866,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

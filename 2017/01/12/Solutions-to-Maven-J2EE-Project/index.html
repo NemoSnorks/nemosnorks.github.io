@@ -68,7 +68,7 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
 <meta property="og:description" content="本文总结了Maven J2EE 项目中常见的一些错误，避免再次进坑。
 Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: java.lang.ClassCastException: Cannot cast org.springframework.web.SpringServlet
 原因tomcat 启动后先将tomcat/lib目录下的jar包全部读">
-<meta property="og:updated_time" content="2017-01-16T02:33:35.690Z">
+<meta property="og:updated_time" content="2017-01-16T03:47:37.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Solutions to Maven J2EE Project">
 <meta name="twitter:description" content="本文总结了Maven J2EE 项目中常见的一些错误，避免再次进坑。
@@ -331,9 +331,9 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
 <h3 id="Tomcat-启动包冲突"><a href="#Tomcat-启动包冲突" class="headerlink" title="Tomcat 启动包冲突"></a>Tomcat 启动包冲突</h3><p>Tomcat 启动出现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.io.IOException: java.lang.ClassCastException: Cannot cast org.springframework.web.SpringServlet</div></pre></td></tr></table></figure></p>
 <p>原因<br>tomcat 启动后先将tomcat/lib目录下的jar包全部读入内存，如果webapps目录里的应用程序中WEB-INF/lib目录下有相同的包，将无法加载，不同版本的包之间也会造成类似问题。</p>
 <p>解决办法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">&lt;groupId&gt;javax&lt;/groupId&gt;</div><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</div><div class="line">&lt;version&gt;7.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">	&lt;groupId&gt;javax&lt;/groupId&gt;</div><div class="line">	&lt;scope&gt;provided&lt;/scope&gt;</div><div class="line">	&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</div><div class="line">	&lt;version&gt;7.0&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
 <h3 id="Maven-update-project-报错"><a href="#Maven-update-project-报错" class="headerlink" title="Maven-update project 报错"></a>Maven-update project 报错</h3><p>Maven项目，右键Maven-update project后报错如下的解决办法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">&lt;plugins&gt;</div><div class="line">&lt;plugin&gt;</div><div class="line">&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div><div class="line">&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line">&lt;<span class="built_in">source</span>&gt;1.7&lt;/<span class="built_in">source</span>&gt;</div><div class="line">&lt;target&gt;1.7&lt;/target&gt;</div><div class="line">&lt;/configuration&gt;</div><div class="line">&lt;/plugin&gt;</div><div class="line">&lt;/plugins&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">	&lt;plugins&gt;</div><div class="line">		&lt;plugin&gt;</div><div class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</div><div class="line">			&lt;configuration&gt;</div><div class="line">				&lt;<span class="built_in">source</span>&gt;1.7&lt;/<span class="built_in">source</span>&gt;</div><div class="line">				&lt;target&gt;1.7&lt;/target&gt;</div><div class="line">			&lt;/configuration&gt;</div><div class="line">		&lt;/plugin&gt;</div><div class="line">	&lt;/plugins&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure>
 <h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3>
       
     </div>
@@ -377,6 +377,10 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/16/Base-Adapter-Helper/" rel="prev" title="Base Adapter Helper">
+                Base Adapter Helper <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -446,7 +450,7 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -455,7 +459,7 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -464,7 +468,7 @@ Tomcat 启动包冲突Tomcat 启动出现如下错误：1java.io.IOException: ja
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
