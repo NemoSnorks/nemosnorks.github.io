@@ -64,7 +64,7 @@
 <meta property="og:url" content="http://www.ieeer.com/2017/01/12/Add-a-Jar-to-Maven/index.html">
 <meta property="og:site_name" content="满屏荒唐言">
 <meta property="og:description" content="Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have alre">
-<meta property="og:updated_time" content="2017-01-12T11:57:28.566Z">
+<meta property="og:updated_time" content="2017-01-16T02:29:10.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Add a Jar to Maven">
 <meta name="twitter:description" content="Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have alre">
@@ -322,9 +322,9 @@
 
       
         <p>Maven does not directly support some libraries, like Microsoft’s SQL Server JDBC. This tutorial will show you how to add an external dependency to your local Maven repository. It assumes you have already installed Maven.</p>
-<a id="more"></a> 
 <h3 id="Download-the-JDBC-driver-for-Microsoft-SQL-Server"><a href="#Download-the-JDBC-driver-for-Microsoft-SQL-Server" class="headerlink" title="Download the JDBC driver for Microsoft SQL Server"></a>Download the JDBC driver for Microsoft SQL Server</h3><p>1, Visit the MSDN site for SQL Server and download the latest version of the JDBC driver for your operating system.<br>2, Unzip the package<br>3, Open a command prompt and switch into the expanded directory where the jar file is located.<br>4, Execute the following command. Be sure to modify the jar file name and version as necessary:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=sqljdbc4.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0</div></pre></td></tr></table></figure>
+<a id="more"></a> 
 <p>5, You should see something similar to this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[INFO] Scanning forprojects...</div><div class="line">[INFO]</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Building Maven Stub Project (No POM) 1</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO]</div><div class="line">[INFO] --- maven-install-plugin:2.3.1:install-file(default-cli)</div><div class="line"> @ standalone-pom ---</div><div class="line">[INFO] Installing /Users/claude/installers/JDBC/sqljdbc_4.0/enu/sqljdbc4.jar</div><div class="line"> to/Users/claude/.m2/repository/com/microsoft/sqlserver/sqljdbc4/4.0/sqljdbc4-4.0.jar</div><div class="line">[INFO] Installing/var/folders/c6/q1bdtq557kv54783p1g6cbsw0000gp/T/mvninstall1874482299687761721.pom</div><div class="line"> to /Users/claude/.m2/repository/com/microsoft/sqlserver/sqljdbc4/4.0/sqljdbc4-4.0.pom</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: 1.208s</div><div class="line">[INFO] Finished at: Tue Mar 13 14:07:31 EDT 2012</div><div class="line">[INFO] Final Memory: 3M/81M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></td></tr></table></figure>
 <h3 id="Modify-your-POM"><a href="#Modify-your-POM" class="headerlink" title="Modify your POM"></a>Modify your POM</h3><p>Include the new dependency by modifying your project’s pom.xml. Add the following dependency:</p>
@@ -363,8 +363,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/09/an-easy-method-for-deleting-svn-in-windows/" rel="next" title="An Easy Method For Deleting .svn in Windows">
-                <i class="fa fa-chevron-left"></i> An Easy Method For Deleting .svn in Windows
+              <a href="/2017/01/09/Method-for-Deleting-SVN-in-Windows/" rel="next" title="Method For Deleting .svn in Windows">
+                <i class="fa fa-chevron-left"></i> Method For Deleting .svn in Windows
               </a>
             
           </div>
@@ -373,8 +373,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/12/Some-Solutions-to-Maven-J2EE-Project/" rel="prev" title="Some Solutions to Maven J2EE Project">
-                Some Solutions to Maven J2EE Project <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/12/Solutions-to-Maven-J2EE-Project/" rel="prev" title="Solutions to Maven J2EE Project">
+                Solutions to Maven J2EE Project <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -445,7 +445,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
