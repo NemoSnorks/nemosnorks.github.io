@@ -42,7 +42,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SVN," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -58,22 +58,19 @@
 
 
 
-<meta name="description" content="今天看了 Jon Galloway 的一个注册表脚本，十分方便，分享如下：
-建立一个文本文件，取名为kill-svn-folders.reg（扩展名由txt改为reg），内容如下：
-12345Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] @=&quot;Dele">
+<meta name="description" content="本文总结了Android 开发中常见的一些错误，避免再次进坑。
+permission denied for this window type在某些型号手机上，sdk中弹一个对话框时崩溃，logcat中出现下面类似的错误，解决办法就是在加上android.permission.SYSTEM_ALERT_WINDOW权限。1234502-21 16:45:47.607: E/AndroidRuntim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Method For Deleting .svn in Windows">
-<meta property="og:url" content="http://www.ieeer.com/2017/01/09/Method-for-Deleting-SVN-in-Windows/index.html">
+<meta property="og:title" content="Solutions to Android">
+<meta property="og:url" content="http://www.ieeer.com/2017/02/21/Solutions-to-Android/index.html">
 <meta property="og:site_name" content="满屏荒唐言">
-<meta property="og:description" content="今天看了 Jon Galloway 的一个注册表脚本，十分方便，分享如下：
-建立一个文本文件，取名为kill-svn-folders.reg（扩展名由txt改为reg），内容如下：
-12345Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] @=&quot;Dele">
-<meta property="og:updated_time" content="2017-01-16T02:33:57.933Z">
+<meta property="og:description" content="本文总结了Android 开发中常见的一些错误，避免再次进坑。
+permission denied for this window type在某些型号手机上，sdk中弹一个对话框时崩溃，logcat中出现下面类似的错误，解决办法就是在加上android.permission.SYSTEM_ALERT_WINDOW权限。1234502-21 16:45:47.607: E/AndroidRuntim">
+<meta property="og:updated_time" content="2017-02-21T11:32:18.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Method For Deleting .svn in Windows">
-<meta name="twitter:description" content="今天看了 Jon Galloway 的一个注册表脚本，十分方便，分享如下：
-建立一个文本文件，取名为kill-svn-folders.reg（扩展名由txt改为reg），内容如下：
-12345Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] @=&quot;Dele">
+<meta name="twitter:title" content="Solutions to Android">
+<meta name="twitter:description" content="本文总结了Android 开发中常见的一些错误，避免再次进坑。
+permission denied for this window type在某些型号手机上，sdk中弹一个对话框时崩溃，logcat中出现下面类似的错误，解决办法就是在加上android.permission.SYSTEM_ALERT_WINDOW权限。1234502-21 16:45:47.607: E/AndroidRuntim">
 
 
 
@@ -101,13 +98,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ieeer.com/2017/01/09/Method-for-Deleting-SVN-in-Windows/"/>
+  <link rel="canonical" href="http://www.ieeer.com/2017/02/21/Solutions-to-Android/"/>
 
 
 
 
 
-  <title> Method For Deleting .svn in Windows | 满屏荒唐言 </title>
+  <title> Solutions to Android | 满屏荒唐言 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +227,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/09/Method-for-Deleting-SVN-in-Windows/">
+  <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/02/21/Solutions-to-Android/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="NemoSnorks">
@@ -254,7 +251,7 @@
             
             
               
-                Method For Deleting .svn in Windows
+                Solutions to Android
               
             
           </h1>
@@ -269,8 +266,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-09T15:50:00+08:00">
-                2017-01-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T19:23:43+08:00">
+                2017-02-21
               </time>
             
 
@@ -292,8 +289,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
+                  <a href="/categories/Dev/" itemprop="url" rel="index">
+                    <span itemprop="name">Dev</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dev/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -327,12 +335,9 @@
       
 
       
-        <p>今天看了 <a href="http://weblogs.asp.net/jgalloway/archive/2007/02/24/shell-command-remove-svn-folders.aspx" target="_blank" rel="external">Jon Galloway</a> 的一个注册表脚本，十分方便，分享如下：</p>
-<p>建立一个文本文件，取名为kill-svn-folders.reg（扩展名由txt改为reg），内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] </div><div class="line">@=<span class="string">"Delete SVN Folders"</span></div><div class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN\<span class="built_in">command</span>] </div><div class="line">@=<span class="string">"cmd.exe /c \"TITLE Removing SVN Folders in %1 &amp;&amp; COLOR 9A &amp;&amp; FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""</span></div></pre></td></tr></table></figure>
-<p>保存之后，双击这个reg文件。成功后，在每一个文件夹上点击右键都会有一个“Delete SVN Folders”的选项，点击之后，就可以删除这个文件下下面所有的.svn文件了。</p>
-<p>本文来自: <a href="http://www.awflasher.com/blog/archives/1585" target="_blank" rel="external">原文链接</a></p>
-
+        <p>本文总结了Android 开发中常见的一些错误，避免再次进坑。</p>
+<h3 id="permission-denied-for-this-window-type"><a href="#permission-denied-for-this-window-type" class="headerlink" title="permission denied for this window type"></a>permission denied for this window type</h3><p>在某些型号手机上，sdk中弹一个对话框时崩溃，logcat中出现下面类似的错误，解决办法就是在加上android.permission.SYSTEM_ALERT_WINDOW权限。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">02-21 16:45:47.607: E/AndroidRuntime(25443): android.view.WindowManager<span class="variable">$BadTokenException</span>: Unable to add window android.view.ViewRootImpl<span class="variable">$W</span>@260c81bf -- permission denied <span class="keyword">for</span> this window <span class="built_in">type</span></div><div class="line">02-21 16:45:47.607: E/AndroidRuntime(25443): 	at android.view.ViewRootImpl.setView(ViewRootImpl.java:809)</div><div class="line">02-21 16:45:47.607: E/AndroidRuntime(25443): 	at android.view.WindowManagerGlobal.addView(WindowManagerGlobal.java:298)</div><div class="line">02-21 16:45:47.607: E/AndroidRuntime(25443): 	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:91)</div><div class="line">02-21 16:45:47.607: E/AndroidRuntime(25443): 	at android.app.Dialog.show(Dialog.java:325)</div></pre></td></tr></table></figure></p>
+<h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3>
       
     </div>
 
@@ -355,7 +360,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SVN/" rel="tag"># SVN</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -364,15 +369,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/18/Mysql-Partition/" rel="next" title="Mysql Partition">
+                <i class="fa fa-chevron-left"></i> Mysql Partition
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/12/Add-a-Jar-to-Maven/" rel="prev" title="Add a Jar to Maven">
-                Add a Jar to Maven <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -419,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -476,6 +490,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#permission-denied-for-this-window-type"><span class="nav-number">1.</span> <span class="nav-text">permission denied for this window type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#…"><span class="nav-number">2.</span> <span class="nav-text">…</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
