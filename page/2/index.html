@@ -222,159 +222,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/16/Base-Adapter-Helper/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="NemoSnorks">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="满屏荒唐言">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="满屏荒唐言" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/16/Base-Adapter-Helper/" itemprop="url">
-                  Base Adapter Helper
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-16T11:38:24+08:00">
-                2017-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">Dev</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dev/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Abstraction for the usual BaseAdapter “ViewHolder” pattern.<br>See <a href="https://github.com/JoanZapata/base-adapter-helper" target="_blank" rel="external">github</a> for details.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">adapter = new QuickAdapter&lt;Status&gt;(this, R.layout.tweet) &#123;</div><div class="line">             @Override</div><div class="line">             protected void convert(BaseAdapterHelper helper, Status status) &#123;</div><div class="line">                 boolean isRetweet = status.isRetweet();</div><div class="line">                 <span class="keyword">if</span> (isRetweet) status = status.getRetweetedStatus();</div><div class="line"></div><div class="line">                 helper.setText(tweetText, status.getText())</div><div class="line">                         .setVisible(tweetRT, isRetweet)</div><div class="line">                         .setText(tweetName, status.getUser().getName())</div><div class="line">                         .setText(tweetDate, dateFormat.format(status.getCreatedAt()))</div><div class="line">                         .setImageUrl(tweetAvatar, status.getUser().getProfileImageURL())</div><div class="line">                         .linkify(tweetText);</div><div class="line">             &#125;</div><div class="line">         &#125;;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/12/Solutions-to-Maven-J2EE-Project/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -787,6 +634,163 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] </div><div class="line">@=<span class="string">"Delete SVN Folders"</span></div><div class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN\<span class="built_in">command</span>] </div><div class="line">@=<span class="string">"cmd.exe /c \"TITLE Removing SVN Folders in %1 &amp;&amp; COLOR 9A &amp;&amp; FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""</span></div></pre></td></tr></table></figure>
 <p>保存之后，双击这个reg文件。成功后，在每一个文件夹上点击右键都会有一个“Delete SVN Folders”的选项，点击之后，就可以删除这个文件下下面所有的.svn文件了。</p>
 <p>本文来自: <a href="http://www.awflasher.com/blog/archives/1585" target="_blank" rel="external">原文链接</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.ieeer.com/2017/01/01/Open-Source-For-Android/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="NemoSnorks">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="满屏荒唐言">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="满屏荒唐言" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/01/Open-Source-For-Android/" itemprop="url">
+                  OpenSourceForAndroid
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-01T00:00:00+08:00">
+                2017-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dev/" itemprop="url" rel="index">
+                    <span itemprop="name">Dev</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dev/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>开源成就了Android，本文总结了一些著名的Android开源库</p>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p>1, 开源整理：Android App新手指引开源控件<br>做好 App 的新手指引，能让其功能第一次与用户见面快速让用户上手，本文整理了 Github 上一些不错的新手指引开源控件，希望对开发者们有所帮助<br><a href="http://blog.coderclock.com/2017/05/22/android/open-source-android-app-guide-view-library/" target="_blank" rel="external">原文链接</a></p>
+<p>…</p>
+<h3 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h3><p>1, Base Adapter Helper<br>Abstraction for the usual BaseAdapter “ViewHolder” pattern.<br>See <a href="https://github.com/JoanZapata/base-adapter-helper" target="_blank" rel="external">github</a> for details.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">adapter = new QuickAdapter&lt;Status&gt;(this, R.layout.tweet) &#123;</div><div class="line">             @Override</div><div class="line">             protected void convert(BaseAdapterHelper helper, Status status) &#123;</div><div class="line">                 boolean isRetweet = status.isRetweet();</div><div class="line">                 <span class="keyword">if</span> (isRetweet) status = status.getRetweetedStatus();</div><div class="line"></div><div class="line">                 helper.setText(tweetText, status.getText())</div><div class="line">                         .setVisible(tweetRT, isRetweet)</div><div class="line">                         .setText(tweetName, status.getUser().getName())</div><div class="line">                         .setText(tweetDate, dateFormat.format(status.getCreatedAt()))</div><div class="line">                         .setImageUrl(tweetAvatar, status.getUser().getProfileImageURL())</div><div class="line">                         .linkify(tweetText);</div><div class="line">             &#125;</div><div class="line">         &#125;;</div></pre></td></tr></table></figure>
+<p>…</p>
 
           
         
